@@ -15,8 +15,13 @@ public class Calc {
 	public String calc(@PathVariable String oper, @PathVariable int n1,@PathVariable int n2) {
 		if(oper.equals("suma")) {
 			return "La suma de " +n1 +"+"+n2+"="+(n1+n2);
-		}else
+		}else if(oper.equals("resta")) {
+			return "La resta de " +n1 +"-"+n2+"="+(n1-n2);
+		}else if(oper.equals("multi")){
+			return "La multiplicacion de " +n1 +"*"+n2+"="+(n1*n2);
+		}else {
 			return "Operacion invalida";
+	}
 	}
 	
 	@RequestMapping("/")
