@@ -3,7 +3,6 @@ package com.fing.app.Controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -19,6 +18,12 @@ public class Calc {
 			return "La resta de " +n1 +"-"+n2+"="+(n1-n2);
 		}else if(oper.equals("multi")){
 			return "La multiplicacion de " +n1 +"*"+n2+"="+(n1*n2);
+		}else if(oper.equals("division")){
+			if(n2 == 0) {
+				return "No se puede divir entre 0";
+			}else {
+				return "La division de " +n1 +"/"+n2+"="+((double)n1/n2);
+			}
 		}else {
 			return "Operacion invalida";
 	}
